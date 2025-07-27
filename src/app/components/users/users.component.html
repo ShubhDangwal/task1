@@ -1,0 +1,23 @@
+<div>
+  <button *appIfRole="'admin'" (click)="openAddUser()">Add User</button>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Age</th><th>Gender</th><th>Email</th><th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.firstName }} {{ user.lastName }}</td>
+      <td>{{ user.age }}</td>
+      <td>{{ user.gender }}</td>
+      <td>{{ user.email }}</td>
+      <td>
+        <button *appIfRole="'admin'" (click)="deleteUser(user.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p *ngIf="msg" style="color: red;">{{ msg }}</p>

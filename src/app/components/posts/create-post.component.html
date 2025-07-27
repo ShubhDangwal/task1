@@ -1,0 +1,6 @@
+<form [formGroup]="postForm" (ngSubmit)="submit()">
+  <input formControlName="title" placeholder="Title" />
+  <textarea formControlName="content" placeholder="Content"></textarea>
+  <button [disabled]="postForm.invalid">Create</button>
+</form>
+<p *ngIf="msg" style="color: red;">{{ msg }}</p>
