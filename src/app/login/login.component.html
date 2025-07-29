@@ -1,0 +1,38 @@
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h2>Login</h2>
+
+    <div class="field">
+      <input
+        placeholder="Username or Email"
+        formControlName="username"
+        [disabled]="loading"
+        required
+      />
+      <div class="error" *ngIf="usernameControl?.hasError('required') && (usernameControl?.touched || usernameControl?.dirty)">
+        Username or Email is required
+      </div>
+    </div>
+
+    <div class="field">
+      <input
+        placeholder="Password"
+        type="password"
+        formControlName="password"
+        [disabled]="loading"
+        required
+      />
+      <div class="error" *ngIf="passwordControl?.hasError('required') && (passwordControl?.touched || passwordControl?.dirty)">
+        Password is required
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="loading || form.invalid">Login</button>
+
+    <div *ngIf="loading" class="overlay">Authenticating...</div>
+
+    <div class="link">
+      <a routerLink="/register">Don't have an account? Register</a>
+    </div>
+  </form>
+</div>

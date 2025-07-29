@@ -1,0 +1,118 @@
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h2>Register</h2>
+
+    <div class="field">
+      <input
+        placeholder="Username"
+        formControlName="username"
+        [disabled]="loading"
+        required
+      />
+      <div
+        class="error"
+        *ngIf="usernameControl?.hasError('required') && (usernameControl?.touched || usernameControl?.dirty)"
+      >
+        Username is required
+      </div>
+      <div class="status" *ngIf="usernameControl?.pending">
+        Checking username uniqueness...
+      </div>
+      <div
+        class="error"
+        *ngIf="usernameControl?.hasError('usernameTaken') && (usernameControl?.touched || usernameControl?.dirty)"
+      >
+        Username is already taken
+      </div>
+    </div>
+
+    <div class="field">
+      <input
+        placeholder="Email"
+        formControlName="email"
+        type="email"
+        [disabled]="loading"
+        required
+      />
+      <div
+        class="error"
+        *ngIf="emailControl?.hasError('required') && (emailControl?.touched || emailControl?.dirty)"
+      >
+        Email is required
+      </div>
+      <div
+        class="error"
+        *ngIf="emailControl?.hasError('email') && (emailControl?.touched || emailControl?.dirty)"
+      >
+        Enter a valid email
+      </div>
+    </div>
+
+    <div class="field">
+      <input
+        placeholder="Password"
+        type="password"
+        formControlName="password"
+        [disabled]="loading"
+        required
+      />
+      <div
+        class="error"
+        *ngIf="passwordControl?.hasError('required') && (passwordControl?.touched || passwordControl?.dirty)"
+      >
+        Password is required
+      </div>
+      <div
+        class="error"
+        *ngIf="passwordControl?.hasError('weakPassword') && (passwordControl?.touched || passwordControl?.dirty)"
+      >
+        Password must be at least 10 characters and include both letters and numbers
+      </div>
+    </div>
+
+    <div class="field">
+      <input
+        placeholder="Confirm Password"
+        type="password"
+        formControlName="confirmPassword"
+        [disabled]="loading"
+        required
+      />
+      <div
+        class="error"
+        *ngIf="confirmPasswordControl?.hasError('required') && (confirmPasswordControl?.touched || confirmPasswordControl?.dirty)"
+      >
+        Confirm password is required
+      </div>
+      <div
+        class="error"
+        *ngIf="form.hasError('passwordMismatch') && (confirmPasswordControl?.touched || confirmPasswordControl?.dirty)"
+      >
+        Passwords do not match
+      </div>
+    </div>
+
+    <div class="field">
+      <select formControlName="role" [disabled]="loading" required>
+        <option value="patient">Patient</option>
+        <option value="doctor">Doctor</option>
+      </select>
+      <div
+        class="error"
+        *ngIf="roleControl?.hasError('required') && (roleControl?.touched || roleControl?.dirty)"
+      >
+        Role is required
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="loading || form.invalid">Sign Up</button>
+
+    <div *ngIf="loading" class="overlay">
+      Registering...
+    </div>
+
+    <div class="link">
+      <a routerLink="/login">Already have an account? Log in</a>
+    </div>
+  </form>
+</div>

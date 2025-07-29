@@ -1,0 +1,94 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Alice Smith",
+      "role": "patient",
+      "password": "alice123",
+      "email": "alice.smith@example.com"
+    },
+    {
+      "id": "2",
+      "name": "Bob Johnson",
+      "role": "doctor",
+      "password": "bobdoc456",
+      "email": "bob.johnson@hospital.com"
+    },
+    {
+      "id": "3",
+      "name": "Carol Lee",
+      "role": "patient",
+      "password": "carol789",
+      "email": "carol.lee@example.com"
+    },
+    {
+      "id": "4",
+      "name": "David Kim",
+      "role": "doctor",
+      "password": "davidmd321",
+      "email": "david.kim@hospital.com"
+    },
+    {
+      "id": "5",
+      "name": "Eva Brown",
+      "role": "patient",
+      "password": "eva456",
+      "email": "eva.brown@example.com"
+    },
+    {
+      "id": "6",
+      "name": "Alice Johnson",
+      "email": "alice@example.com",
+      "password": "a123456789",
+      "role": "patient"
+    },
+    {
+      "id": "7",
+      "name": "vfd",
+      "email": "shubh@gmail.com",
+      "password": "passkey123",
+      "role": "patient"
+    },
+    {
+      "id": "71",
+      "name": "Alice Smiths",
+      "email": "shubhdangwal.21011793@gehu.ac.in",
+      "password": "user123456",
+      "role": "doctor"
+    }
+  ],
+  "appointments": [
+    {
+      "id": "1",
+      "patientid": 1,
+      "doctorid": 2,
+      "description": "Annual physical checkup",
+      "date": "2024-06-10",
+      "time": "09:00"
+    },
+    {
+      "id": "2",
+      "patientid": 3,
+      "doctorid": 2,
+      "description": "Consultation for allergies",
+      "date": "2024-06-11",
+      "time": "10:30"
+    },
+    {
+      "id": "3",
+      "patientid": 5,
+      "doctorid": 4,
+      "description": "Follow-up on lab results",
+      "date": "2024-06-12",
+      "time": "14:00"
+    },
+    {
+      "id": "4",
+      "patientid": 1,
+      "doctorid": 4,
+      "description": "Specialist referral discussion",
+      "date": "2024-06-13",
+      "time": "11:15"
+    }
+  ]
+}
