@@ -1,6 +1,0 @@
-<form #f="ngForm" (ngSubmit)="onLogin(f)">
-  <input type="email" name="email" ngModel required placeholder="Email" />
-  <input type="password" name="password" ngModel required placeholder="Password" />
-  <button [disabled]="f.invalid">Login</button>
-  <p *ngIf="errorMsg" class="error" style="color:red;">{{ errorMsg }}</p>
-</form>
